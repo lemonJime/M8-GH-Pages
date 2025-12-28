@@ -1,0 +1,24 @@
+<div class="adding-user-form">
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input id="editedUserFirstName" matInput placeholder="Escribe el nombre..."
+                formControlName="editedUserFirstName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input id="editedUserLastName" matInput placeholder="Escribe el apellido..."
+                formControlName="editedUserLastName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input id="editedUserEmail" matInput placeholder="Email..." formControlName="editedUserEmail">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input id="editedUserPhone" matInput placeholder="Phone..." formControlName="editedUserPhone">
+        </mat-form-field>
+        <button matButton="elevated" type="submit" (click)="update()">Actualizar</button>
+
+    </form>
+</div>

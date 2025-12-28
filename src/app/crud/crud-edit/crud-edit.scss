@@ -1,0 +1,99 @@
+// --- Variables (Mismas que el padre para consistencia) ---
+$primary-color: #dbdb00;
+$primary-hover: #c9c900;
+$bg-light: #fcfcf8;
+$text-dark: #1d1d0c;
+$border-color: #eaeacd;
+$font-family: 'Manrope', sans-serif;
+
+:host {
+  display: block;
+  font-family: $font-family;
+  // Eliminamos min-height y padding global para que no rompa el flujo del padre
+  margin-top: 24px; 
+}
+
+// Estructura idéntica al formulario de "Añadir"
+.adding-user-form {
+  max-width: 960px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.033em;
+    border-left: 4px solid $primary-color;
+    padding-left: 16px;
+    margin-bottom: 24px;
+    color: $text-dark;
+  }
+
+  form {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid $border-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    
+    // Layout Grid para los campos
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    align-items: end;
+
+    mat-form-field {
+      width: 100%;
+      // Mantenemos la distribución de 4 columnas (3+3+3+3 = 12)
+      &:nth-child(1) { grid-column: span 3; }
+      &:nth-child(2) { grid-column: span 3; }
+      &:nth-child(3) { grid-column: span 3; }
+      &:nth-child(4) { grid-column: span 3; }
+    }
+
+    button[type="submit"] {
+      grid-column: span 12; 
+      background-color: $primary-color;
+      color: $text-dark;
+      font-weight: 700;
+      height: 48px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+// --- Overrides para asegurar que los inputs se vean igual ---
+::ng-deep {
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined {
+    background-color: $bg-light !important;
+    border-radius: 8px !important;
+  }
+
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: $border-color !important;
+  }
+
+  .mat-mdc-form-field.mat-focused {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__trailing {
+      border-color: $primary-color !important;
+      border-width: 2px !important;
+    }
+  }
+}
