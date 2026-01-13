@@ -1,59 +1,38 @@
-# LabAngular
+# Angular Auth & CRUD Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Aplicación web desarrollada en Angular que implementa un sistema de autenticación con persistencia y gestión completa de usuarios mediante CRUD.
 
-## Development server
+## Características principales
 
-To start a local development server, run:
+**Sistema de autenticación**
+- Login con formulario reactivo y validaciones
+- Persistencia del estado en localStorage
+- Gestión de sesión mediante AuthService con signals
+- Navegación dinámica entre menús público y privado
+- Credenciales válidas: `master@lemoncode.net` / `12345678`
 
-```bash
-ng serve
-```
+**CRUD de usuarios**
+- Consumo de API REST (randomuser.me)
+- Listado de usuarios con tabla de Angular Material
+- Crear, editar y eliminar usuarios
+- Diálogos de confirmación para operaciones críticas
+- Gestión de estado reactivo con UserService
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**Stack técnico**
+- Angular 19 con Standalone Components
+- Angular Material para la interfaz
+- Reactive Forms con validaciones
+- Services con signals para estado reactivo
+- SCSS para estilos
 
-## Code scaffolding
+## Capturas de pantalla
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**Login**
+![Login](screenshots/screencapture-localhost-4200-login-2026-01-13-19_13_35.png)
 
-```bash
-ng generate component component-name
-```
+**CRUD de usuarios**
+![CRUD](screenshots/screencapture-localhost-4200-crud-2026-01-13-19_14_07.png)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**Formulario de usuario**
+![Form](screenshots/screencapture-localhost-4200-login-2026-01-13-19_15_35.png)
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

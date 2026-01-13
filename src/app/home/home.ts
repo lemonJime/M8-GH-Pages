@@ -8,6 +8,6 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './home.scss',
 })
 export class HomeComponent {
-  titulo : string = 'Laboratorio Angular'
-  texto : string= 'Entrega del Ejercicio Básico'
+  titulo : string = 'Laboratorio Módulo 4.2'
+  texto : string= 'Angular Framework'
 }

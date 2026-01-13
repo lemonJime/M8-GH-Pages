@@ -20,8 +20,6 @@ export class CrudEdit {
 
   @Output()
   onUpdateUser: EventEmitter<User> = new EventEmitter();
-  @Output()
-  saveEvent: EventEmitter<User> = new EventEmitter();
 
   private userEditForm = inject(FormBuilder);
   userForm = this.userEditForm.group({

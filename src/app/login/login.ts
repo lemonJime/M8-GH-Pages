@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -17,32 +17,28 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
 
   private formBuilder = inject(FormBuilder);
-  autService = inject(AuthService);
-  message = '';
+  private authService = inject(AuthService);
   private router = inject(Router);
-
+  
+  message = '';
 
   loginForm = this.formBuilder.group({
     username: ['', Validators.required],
     password: ['', Validators.required]
-  })
-
-  goToDashboard(){
-    this.router.navigate(['/dashboard']);
-  }
+  });
 
   onSubmit() {
-    if (this.loginForm.value.username === 'master@lemoncode.net' && this.loginForm.value.password === '12345678') {
-      this.autService.setUserName(this.loginForm.value.username);
-      this.goToDashboard();
-    } else if (this.loginForm.value.username !== 'curso') {
-      this.message = 'El nombre del usuario no es correcto'
-    } else if (this.loginForm.value.password !== 'angular') {
-      this.message = 'La contraseña no es correcta no es correcto'
-    }
-    else {
-      this.message = '';
+    const credentials = {
+      username: this.loginForm.value.username || '',
+      password: this.loginForm.value.password || ''
+    };
+
+    const loginSuccessful = this.authService.login(credentials);
+    
+    if (loginSuccessful) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.message = 'Credenciales incorrectas. Usa master@lemoncode.net / 12345678';
     }
   }
 }
-

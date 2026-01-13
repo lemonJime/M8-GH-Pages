@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { PublicHeaderComponent } from './public-header/public-header';
 import { PrivateHeaderComponent } from './private-header/private-header';
 import { AuthService } from './services/auth.service';
+import { Footer } from './footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PublicHeaderComponent, PrivateHeaderComponent],
+  imports: [RouterOutlet, PublicHeaderComponent, PrivateHeaderComponent, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

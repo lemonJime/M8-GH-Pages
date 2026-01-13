@@ -3,6 +3,15 @@
   <a mat-tab-link routerLink="/gallery" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive">Gallery</a>
   <a mat-tab-link routerLink="/crud" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive">CRUD</a>
   <a mat-tab-link routerLink="/profile" routerLinkActive #rla4="routerLinkActive" [active]="rla4.isActive">Profile</a>
-  <!-- Otros... -->
+  
+  <span style="flex: 1"></span>
+  
+  <span style="margin-right: 16px; display: flex; align-items: center;">
+    Usuario: {{ authService.getUsername() }}
+  </span>
+  
+  <button mat-raised-button color="warn" (click)="logout()">
+    Salir
+  </button>
 </nav>
 <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

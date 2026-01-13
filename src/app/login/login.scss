@@ -3,6 +3,7 @@ $primary: #D9D900;
 $text-black: #000000;
 $bg-input: #f9fafb;
 $border-color: #e5e7eb;
+$error-msg: #ea0000;
 $font-family: 'Manrope', 'Noto Sans', sans-serif;
 
 :host {
@@ -15,7 +16,6 @@ $font-family: 'Manrope', 'Noto Sans', sans-serif;
   position: relative;
   overflow: hidden;
 
-  // Círculos difuminados de fondo (Blobs)
   &::before, &::after {
     content: '';
     position: absolute;
@@ -41,7 +41,6 @@ $font-family: 'Manrope', 'Noto Sans', sans-serif;
   }
 }
 
-// Contenedor principal (La "Card")
 div:has(form) {
   position: relative;
   z-index: 10;
@@ -59,7 +58,7 @@ div:has(form) {
     font-weight: 800;
     text-align: center;
     color: $text-black;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
     letter-spacing: -0.025em;
   }
 
@@ -71,19 +70,18 @@ div:has(form) {
   }
 }
 
-// Estilos del Formulario
+
 form {
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  // Ajustes de Angular Material Form Field
+
   mat-form-field {
     width: 100%;
     margin-bottom: 4px;
 
     ::ng-deep {
-      // El contenedor del input
       .mdc-text-field--outlined {
         background-color: $bg-input !important;
         border-radius: 1rem !important;
@@ -91,14 +89,12 @@ form {
         height: 60px;
       }
 
-      // Bordes
       .mdc-notched-outline__leading,
       .mdc-notched-outline__notch,
       .mdc-notched-outline__trailing {
         border-color: $border-color !important;
       }
 
-      // Estado Focus
       &.mdc-text-field--focused {
         .mdc-notched-outline__leading,
         .mdc-notched-outline__notch,
@@ -108,14 +104,12 @@ form {
         }
       }
 
-      // Quitar la etiqueta flotante de Material si quieres el look del diseño
       .mdc-floating-label {
         color: #9ca3af !important;
       }
     }
   }
 
-  // Botón de Login
   button[type="submit"] {
     margin-top: 16px;
     height: 56px;
@@ -145,10 +139,8 @@ form {
     }
   }
 }
-
-// Mensaje de error/info al final
 p:last-child {
   margin-top: 24px;
   font-weight: 500;
-  color: $text-black;
+  color: $error-msg;
 }

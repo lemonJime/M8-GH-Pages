@@ -1,0 +1,76 @@
+$primary-color: #dbdb00;
+$text-dark: #1d1d0c;
+$border-light: #f4f4e6;
+
+.mat-tab-nav-bar {
+  border-bottom: 1px solid $border-light;
+  background-color: white !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 20px;
+
+  
+  ::ng-deep .mat-mdc-tab-links {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+}
+
+
+.mat-tab-link {
+  font-family: 'Manrope', sans-serif !important;
+  height: 64px !important;
+  color: $text-dark !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  padding: 0 20px !important;
+
+  &.mat-mdc-tab-disabled { opacity: 0.5 !important; }
+}
+
+::ng-deep .mdc-tab-indicator__content--underline {
+  border-color: $primary-color !important;
+  border-width: 3px !important;
+}
+
+span[style*="flex: 1"] + span, 
+button[mat-raised-button] {
+  font-family: 'Manrope', sans-serif;
+}
+
+span[style*="margin-right: 16px"] {
+  font-size: 14px;
+  font-weight: 700;
+  color: $text-dark;
+  
+  &::before {
+    content: 'person'; 
+    font-family: 'Material Symbols Outlined';
+    margin-right: 8px;
+    color: $primary-color;
+    font-size: 20px;
+  }
+}
+
+
+button.mat-mdc-raised-button.mat-warn {
+  background-color: $primary-color !important; 
+  color: $text-dark !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border-radius: 8px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  box-shadow: none !important;
+  
+  &:hover {
+    background-color: #c9c900 !important;
+  }
+}
